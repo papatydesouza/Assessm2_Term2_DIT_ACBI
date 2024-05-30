@@ -4,16 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header, nav, footer {
+            text-align: center;
+            padding: 1em;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 5px;
+        }
+        .container {
+            width: 75%;
+            margin: 0 auto;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0;
+            list-style-type: none;
+        }
+        .product-item {
+            width: 28%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .product-image {
+            width: 100%;
+            height: auto;
+        }
+        .product-details {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Out Products</h1>
-    <ul>
-        <li>Produto 1</li>
-        <li>Produto 2</li>
-        <li>Produto 3</li>
-        <li>Produto 4</li>
-        <li>Produto 5</li>
-        <li>Produto 6</li>
-    </ul>
+    <header>
+        <h1>Our Products</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="products.php">Products</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="register.php">Register</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Our Products</h2>
+        <ul class="product-list">
+            <li class="product-item">
+                <img src="https://www.theperfectloaf.com/wp-content/uploads/2016/03/theperfectloaf-beginners-sourdough-bread-v-1-1.jpg" alt="Classic Bread" class="product-image">
+                <div class="product-details">
+                    <h3>Classic Bread</h3>
+                    <p>This is a soft and amazing Bread</p>
+                </div>
+            </li>
+            <li class="product-item">
+                <img src="https://www.theperfectloaf.com/wp-content/uploads/2016/03/theperfectloaf-beginners-sourdough-bread-v-1-1.jpg" alt="Classic Bread WholeMeal" class="product-image">
+                <div class="product-details">
+                    <h3>Classic Bread WholeMeal</h3>
+                    <p>This is a soft and amazing Bread</p>
+                </div>
+            </li>
+            <li class="product-item">
+                <img src="https://www.theperfectloaf.com/wp-content/uploads/2016/03/theperfectloaf-beginners-sourdough-bread-v-1-1.jpg" alt="White Classic Bread" class="product-image">
+                <div class="product-details">
+                    <h3>White Classic Bread</h3>
+                    <p>This is a soft and amazing Bread</p>
+                </div>
+            </li>
+            <li class="product-item">
+                <img src="https://www.theperfectloaf.com/wp-content/uploads/2016/03/theperfectloaf-beginners-sourdough-bread-v-1-1.jpg" alt="Classic Amazing Bread" class="product-image">
+                <div class="product-details">
+                    <h3>Classic Amazing Bread</h3>
+                    <p>This is a soft and amazing Bread</p>
+                </div>
+            </li>
+            <li class="product-item">
+                <img src="https://www.theperfectloaf.com/wp-content/uploads/2016/03/theperfectloaf-beginners-sourdough-bread-v-1-1.jpg" alt="Classic Bread WholeMeal double" class="product-image">
+                <div class="product-details">
+                    <h3>Classic Bread WholeMeal double</h3>
+                    <p>This is a soft and amazing Bread</p>
+                </div>
+            </li>
+            <li class="product-item">
+                <img src="https://www.theperfectloaf.com/wp-content/uploads/2016/03/theperfectloaf-beginners-sourdough-bread-v-1-1.jpg" alt="White Soft Classic Bread" class="product-image">
+                <div class="product-details">
+                    <h3>White Soft Classic Bread</h3>
+                    <p>This is a soft and amazing Bread</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <p>&copy; 2024 Lucas Loaves. <a href="https://www.nsw.gov.au/nsw-government/privacy-statement">Privacy Statement</a></p>
+        <p>123 Pitt Street, Sydney NSW 2000</p>
+    </footer>
 </body>
 </html>

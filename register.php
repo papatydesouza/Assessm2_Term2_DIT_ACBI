@@ -1,20 +1,16 @@
 <?php
-include 'db.php';
+include('db.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-    $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')";
-
-    if ($conn->query($sql) === TRUE) {
+    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+    if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
-
-    $conn->close();
 }
 ?>
 
@@ -22,16 +18,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
     <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <form method="POST" action="">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Register">
+<header>
+    <h1>Welcome to Lucas Loavers</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="products.php">Products</a></li>
+        <li><a href="contact.php">Contact</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="register.php">Register</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <h2>Register</h2>
+    <form action="" method="post">
+        <label>Username :</label>
+        <input type="text" name="username" class="box"/><br/><br/>
+        <label>Password :</label>
+        <input type="password" name="password" class="box"/><br/><br/>
+        <input type="submit" value="Submit"/><br/>
     </form>
+</div>
+<footer>
+    <p>&copy; 2024 Lucas Loaves. <a href="https://www.nsw.gov.au/nsw-government/privacy-statement">Privace Statement</a></p>
+    <p>123 Pitt Street, Sydney NSW 2000</p>
+</footer>
 </body>
 </html>
